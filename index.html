@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,114 @@
     <link rel="stylesheet" href="./CSS/main.css">
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
+
 <body>
+
+    <!-- Wrapper -->
     <div id="wrapper">
 
         <div class="main-container">
-            <h1 class=>Weather App</h1>
+
+            <!-- Main Heading -->
+
+            <h1 class="main-heading">Weather App</h1>
+
+            <!-- Button Container/Tab Container -->
+            <div class="tab-heading">
+
+                <button class="tab" data-userWeather>Your Weather</button>
+                <button class="tab" data-searchWeather>Search Weather</button>
+            </div>
+
+
+
+            <!--Weather Container -->
+
+            <div>
+
+                <!-- grant loacation container -->
+                <div>
+
+                    <img src="./assets/location.png" alt="" loading="lazy" height="80" width="80">
+                    <h2>Grant Location Access</h2>
+                    <p>Allow access to get Weather Information</p>
+                    <button class="btn" data-grantAccess>Grant Access</button>
+
+                </div>
+
+                <!-- search weather container -->
+
+                <form class="form-container" data-searchForm>
+                        
+                        <input type="search" name="" id="" data-searchCity placeholder="Search for City ...">
+
+                        <button class="btn">
+                            <img src="./assets/search.png" alt="" loading="lazy" width="20" height="20">
+                        </button>
+                       
+                </form>
+
+                <!-- Loading Screen Container -->
+
+                <div class="loading-container">
+                    <img src="./assets/loading.gif" alt="" loading="lazy" width="150" height="150" data-loading>
+                    <p>Loading</p>
+                </div>
+
+                <!-- Show Weather Information Container -->
+
+                <div class="user-info-container">
+
+                    <!-- City name &  Country Flag container-->
+                    <div class="name">
+                        <p data-cityName></p>
+                        <img src="" alt="" data-countryIcon>
+                    </div>
+
+                    <!-- Weather Description-->
+                    <p data-weatherDescription></p>
+
+                    <!-- Weather Description Image -->
+                    <img src="" alt="" data-weatherDescriptionImage>
+
+                    <!-- Temperature -->
+                    <h1 data-temperature></h1>
+
+                    <!-- 3 Parameter Container -->
+                    <div class="parameter-container">
+
+                        <!-- Windspeed -->
+
+                        <div class="windspeed parameter">
+                            <img src="./assets/wind.png" alt="">
+                            <p>Windspeed</p>
+                            <p data-windspeed></p>
+                        </div>
+
+                        <!-- Humidity -->
+
+                        <div class="humidity parameter">
+                            <img src="./assets/humidity.png" alt="">
+                            <p>Humidity</p>
+                            <p data-humidity></p>
+                        </div>
+
+                        <!-- Clouds -->
+
+                        <div class="clouds parameter">
+                            <img src="./assets/cloud.png" alt="">
+                            <p>Clouds</p>
+                            <p data-clouds></p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="./script.js"></script>
 </body>
+
 </html>
