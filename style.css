@@ -1,0 +1,63 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+/* Wrapper */
+
+#wrapper{
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);;
+}
+.tab.current-tab{
+background-color: rgba(219,226,239,0.5);
+border-radius: 4px;
+}
+
+.grant-location-container,.form-container,.loading-container,.user-info-container{
+    display: none;
+}
+
+
+/* Active class will work only when js code will exceute */
+/* grant-location-container */
+.grant-location-container.active{
+    display:flex;
+}
+
+/* form-container */
+.form-container.active{
+    display: flex;
+}
+
+.form-container [data-searchCity]::placeholder{
+    color: #F9F7F7;
+    opacity: 0.7;
+}
+
+.form-container [data-searchCity]:focus{
+    outline: none;
+    outline: 3px solid rgba(245, 247, 252, 0.5);
+}
+
+
+/* loading-container */
+.loading-container.active{
+    display: flex;
+}
+
+/* user-info-container */
+.user-info-container.active{
+    display: flex;
+}
+
+
+/* error container */
+.error-container{
+        display: none;
+}
+
+.error-container.active{
+     display: flex;
+}
