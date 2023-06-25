@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -13,44 +19,43 @@
 <body>
 
     <!-- Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" class="relative flex flex-col items-center w-[100vw] h-[100vh] overflow-x-hidden">
 
-        <div class="main-container">
+        <div class="main-container flex flex-col gap-12 mt-8 w-11/12 md:max-w-[760px] items-center">
 
             <!-- Main Heading -->
 
-            <h1 class="main-heading">Weather App</h1>
+            <h1 class="main-heading font-bold text-white text-3xl uppercase text-center tracking-wide">Weather App</h1>
 
             <!-- Button Container/Tab Container -->
-            <div class="tab-heading">
+            <div class="tab-heading  flex justify-between text-white md:w-[calc(80%-80px)] w-full mx-auto">
 
-                <button class="tab" data-userWeather>Your Weather</button>
-                <button class="tab" data-searchWeather>Search Weather</button>
+                <button class="tab py-1 px-2 text-sm tracking-wider" data-userWeather>Your Weather</button>
+                <button class="tab  py-1 px-2 text-sm tracking-wider" data-searchWeather>Search Weather</button>
             </div>
 
 
 
             <!--Weather Container -->
 
-            <div class="weather-container">
+            <div class="w-full weather-container flex flex-col">
 
                 <!-- grant location container -->
-                <div class="grant-location-container">
+                <div class="grant-location-container flex flex-col items-center justify-center gap-4 text-white">
 
-                    <img src="./assets/location.png" alt="" loading="lazy" height="80" width="80">
-                    <h2>Grant Location Access</h2>
-                    <p>Allow access to get Weather Information</p>
-                    <button class="btn" data-grantAccess>Grant Access</button>
-
+                    <img src="./assets/location.png" alt="" loading="lazy" height="80" width="80" class="mx-auto">
+                    <h2 class="font-bold text-2xl">Grant Location Access</h2>
+                    <p class="font-thin -mt-1 text-sm">Allow access to get Weather Information</p>
+                    <button class="btn bg-[#3F72AF] px-6 py-1 rounded-md" data-grantAccess>Grant Access</button>
                 </div>
 
                 <!-- search weather container -->
 
-                <form class="form-container" data-searchForm>
+                <form class="form-container flex flex-row gap-2 md:w-[calc(80%-80px)] w-full mx-auto mb-4" data-searchForm>
                         
-                        <input type="search" name="" id="" data-searchCity placeholder="Search for City ...">
+                        <input type="search" name="" id="" data-searchCity placeholder="Search for City ..." class="w-[100%] bg-[rgba(219,226,239,0.5)] py-2 px-4 rounded-lg text-[#F9F7F7]">
 
-                        <button class="btn">
+                        <button class="btn w-[40px] h-[40px] rounded-full bg-[#3f72af] flex justify-center items-center" type="submit" data-searchIcon>
                             <img src="./assets/search.png" alt="" loading="lazy" width="20" height="20">
                         </button>
                        
@@ -58,59 +63,66 @@
 
                 <!-- Loading Screen Container -->
 
-                <div class="loading-container">
+                <div class="loading-container flex flex-col gap-2 justify-center items-center">
                     <img src="./assets/loading.gif" alt="" loading="lazy" width="150" height="150" data-loading>
                     <p>Loading</p>
                 </div>
 
                 <!-- Show Weather Information Container -->
 
-                <div class="user-info-container">
+                <div class="w-full user-info-container flex flex-col text-[#F9F7F7] justify-center items-center gap-4">
 
                     <!-- City name &  Country Flag container-->
-                    <div class="name">
-                        <p data-cityName></p>
-                        <img src="" alt="" data-countryIcon>
+                    <div class="name flex gap-2 items-center">
+                        <p data-cityName class="text-3xl font-light capitalize"></p>
+                        <img src="" alt="" width="26"  data-countryIcon>
                     </div>
 
                     <!-- Weather Description-->
-                    <p data-weatherDescription></p>
+                    <p data-weatherDescription  class="text-lg capitalize"></p>
 
                     <!-- Weather Description Image -->
-                    <img src="" alt="" data-weatherDescriptionImage>
+                    <img src="" alt="" width="100" height="100" data-weatherDescriptionImage loading="lazy">
 
                     <!-- Temperature -->
-                    <h1 data-temperature></h1>
+                    <h1 data-temperature class="text-5xl font-bold "></h1>
 
                     <!-- 3 Parameter Container -->
-                    <div class="parameter-container">
+                    <div class="parameter-container flex flex-col md:flex-row items-center gap-4 w-[calc(100%-180px)] text-[#F9F7F7]">
 
                         <!-- Windspeed -->
 
-                        <div class="windspeed parameter">
-                            <img src="./assets/wind.png" alt="">
-                            <p>Windspeed</p>
-                            <p data-windspeed></p>
+                        <div class="windspeed parameter bg-[rgba(219,226,239,0.5)] w-[220px] flex flex-col justify-center items-center rounded-md py-2">
+                            <img src="./assets/wind.png" alt="" width="50" height="50">
+                            <p class="uppercase text-lg md:text-2xl font-light">Windspeed</p>
+                            <p data-windspeed class="text-lg  md:text-2xl font-light"></p>
                         </div>
 
                         <!-- Humidity -->
 
-                        <div class="humidity parameter">
-                            <img src="./assets/humidity.png" alt="">
-                            <p>Humidity</p>
-                            <p data-humidity></p>
+                        <div class="humidity parameter bg-[rgba(219,226,239,0.5)] w-[220px] flex flex-col justify-center items-center rounded-md py-2">
+                            <img src="./assets/humidity.png" alt="" width="50" height="50">
+                            <p class="uppercase text-lg  md:text-2xl font-light">Humidity</p>
+                            <p data-humidity class="text-lg    md:text-2xl font-light"></p>
                         </div>
 
                         <!-- Clouds -->
 
-                        <div class="clouds parameter">
-                            <img src="./assets/cloud.png" alt="">
-                            <p>Clouds</p>
-                            <p data-clouds></p>
+                        <div class="clouds parameter bg-[rgba(219,226,239,0.5)] w-[220px] flex flex-col justify-center items-center rounded-md py-2">
+                            <img src="./assets/cloud.png" alt="" width="50" height="50">
+                            <p class="uppercase text-lg   md:text-2xl font-light">Clouds</p>
+                            <p data-clouds class="text-lg   md:text-2xl font-light"></p>
                         </div>
 
                     </div>
 
+                </div>
+
+                <!-- Error container -->
+               
+                <div class="error-container flex flex-col gap-2 justify-center items-center" data-error>
+                     <img src="./assets/not-found.png" alt="" width="380" height="380" data-errorImage>
+                    <p data-notfound class="text-[#F9F7F7] text-lg"></p>
                 </div>
             </div>
         </div>
